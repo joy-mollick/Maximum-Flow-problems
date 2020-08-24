@@ -50,14 +50,14 @@ bool bfs(int s,int t)
 
 /// find those nodes reachable through non-zero capacity edges from source in residual graph.
 /// and marked them by visited array.
-voi dfs(int u)
+void dfs(int u)
 {
-    visited[u] = true; 
-    for (int i = 1; i <=V; i++) 
+    visited[u] = true;
+    for (int v=0; v<V; v++)
     {
-       if (resgraph[s][i]&&!visited[i]) 
+       if(resgraph[u][v] && !visited[v])
        {
-           dfs(i); 
+           dfs(v);
        }
     }
 
